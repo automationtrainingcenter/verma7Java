@@ -51,5 +51,25 @@ package basic_concepts;
  */
 
 public class VariablesDemo {
+	// instance variable
+	int i = 10;
+	
+	// static variable
+	static int s = 20;
+	
+	public static void main(String[] args) {
+		int l = 30;
+		
+		// accessing local variable
+		System.out.println("local variable l = "+l);
+		
+		// accessing static variable
+		System.out.println("static variable s = "+VariablesDemo.s);
+		
+		// accessing instance variable
+		// create an object
+		VariablesDemo obj = new VariablesDemo();
+		System.out.println("instace varaible i = "+obj.i);
+	}
 
 }
