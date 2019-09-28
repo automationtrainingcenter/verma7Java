@@ -130,7 +130,37 @@ public class DataTypesDemo {
 		byLow = (byte) shHigh;
 		System.out.println("byLow = "+byLow);
 		
+		//primitive to wrapper type
+		int iP = 1234;
+//		Integer iW = new Integer(iP);
+		Integer iW = Integer.valueOf(iP);
 		
+		
+		// wrapper to primitive 
+		Double dW = new Double(9.8);
+		double dP = dW.doubleValue();
+		
+		Long lW = new Long(321);
+		long lP = lW.longValue();
+		
+		// string to int conversion
+		String si = "9876";
+		int s2i = Integer.parseInt(si);
+		System.out.println(s2i+10);
+		
+		// string to float conversion
+		String sf = "90.786";
+		float s2f = Float.parseFloat(sf);
+		System.out.println(s2f+10);
+		
+		// primitive to String type
+		short ss = 21234;
+		String sh2s = Short.toString(ss);
+		System.out.println(sh2s+10);
+		
+		double ds = 213.334;
+		String d2s = Double.toString(ds);
+		System.out.println(d2s+10);
 		
 	}
 
