@@ -174,11 +174,11 @@ public class Operators {
 	public static void main(String[] args) {
 		s = new Scanner(System.in);
 		Operators obj = new Operators();
-		obj.arithmatic();
+//		obj.arithmatic();
 		obj.logical();
-		obj.relational();
-		obj.assignment();
-		obj.bitwise();
+//		obj.relational();
+//		obj.assignment();
+//		obj.bitwise();
 		s.close();
 
 	}

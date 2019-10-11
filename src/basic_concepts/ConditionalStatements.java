@@ -74,4 +74,64 @@ package basic_concepts;
 
 public class ConditionalStatements {
 
+	public static void main(String[] args) {
+		// simple if example
+		// verify a given number is positive
+		int num = 125;
+		if (num >= 0) {
+			System.out.println("given number is positive");
+		}
+
+		// if else example
+		// verify a given number is even or odd
+		if (num % 2 == 0) {
+			System.out.println("given number is even number");
+		} else {
+			System.out.println("given number is odd number");
+		}
+
+		// else if ladder to print biggest number in given two numbers
+		int i = 100;
+		int j = 10;
+		if (i > j) {
+			System.out.println("i is bigger");
+		} else if (j > i) {
+			System.out.println("j is bigger");
+		} else {
+			System.out.println("i and j both are equal");
+		}
+
+		// nested if to print biggest number in given two numbers
+		if (i != j) {
+			if (i > j) {
+				System.out.println("i is bigger");
+			} else {
+				System.out.println("j is bigger");
+			}
+		} else {
+			System.out.println("i and j both are equal");
+		}
+
+		// switch case
+		String level="";
+		switch (level) {
+		case "basic":
+			System.out.println("displaying instructions");
+			System.out.println("click here for hint");
+			System.out.println("game launched in easy mode");
+			break;
+		case "moderate":
+			System.out.println("click here for hint");
+			System.out.println("game launched in moderate mode");
+			break;
+		case "advanced":
+			System.out.println("game launched in advanced mode");
+			break;
+		default:
+			System.out.println("invalid level entered");
+		}
+		
+		
+	}
+
 }
