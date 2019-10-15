@@ -67,6 +67,10 @@ public class ArraysDemo {
 		System.out.println(numbers[3]);
 		System.out.println(numbers[4]);
 		System.out.println(numbers[5]);
+		
+		for(int number : numbers) {
+			
+		}
 
 		System.out.println("number of items in numbers array is " + numbers.length);
 

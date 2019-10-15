@@ -72,6 +72,8 @@ package basic_concepts;
  * 
  */
 
+import java.util.Scanner;
+
 public class ConditionalStatements {
 
 	public static void main(String[] args) {
@@ -113,7 +115,7 @@ public class ConditionalStatements {
 		}
 
 		// switch case
-		String level="";
+		String level = "";
 		switch (level) {
 		case "basic":
 			System.out.println("displaying instructions");
@@ -130,8 +132,58 @@ public class ConditionalStatements {
 		default:
 			System.out.println("invalid level entered");
 		}
-		
-		
+
+		//
+		Scanner sc = new Scanner(System.in);
+//		float expectedResult = 123.456f;
+//		System.out.println("enter actual result");
+//		float actualResult = sc.nextFloat();
+//		if (expectedResult == actualResult) {
+//			System.out.println("test case is passed");
+//		} else {
+//			System.out.println("test case is failed");
+//		}
+//
+//		//
+//		System.out.println("enter browser name");
+//		String browserName = sc.next();
+////		browserName = browserName.toLowerCase();
+//		if (browserName.equalsIgnoreCase("chrome")) {
+//			System.out.println("launching chrome browser");
+//		} else if (browserName.equalsIgnoreCase("firefox")) {
+//			System.out.println("launching firefox browser");
+//		} else if (browserName.equalsIgnoreCase("opera")) {
+//			System.out.println("launching opera browser");
+//		} else {
+//			System.out.println("launching IE browser");
+//		}
+
+		// facebook login scenario
+//		System.out.println("enter username");
+//		String username = sc.next();
+//		System.out.println("enter password");
+//		String password = sc.next();
+//		if (username.equalsIgnoreCase("sunshine") && password.equals("Selenium")){
+//			System.out.println("welcome user");
+//		}else {
+//			System.out.println("invalid credentials");
+//		}
+
+		System.out.println("enter gamil username");
+		String guser = sc.next();
+		if (guser.equalsIgnoreCase("sunshine")) {
+			System.out.println("enter gmail password");
+			String gpass = sc.next();
+			if (gpass.equals("Selenium")) {
+				System.out.println("welcome user");
+			} else {
+				System.out.println("invalid password");
+			}
+
+		} else {
+			System.out.println("username does not exist");
+		}
+
 	}
 
 }
