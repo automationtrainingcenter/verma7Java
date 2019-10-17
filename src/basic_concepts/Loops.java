@@ -93,24 +93,73 @@ public class Loops {
 //		for (int j = 0; j < numbers.length; j++) {
 //			System.out.println(numbers[j]);
 //		}
-		for(int number : numbers) {
+		for (int number : numbers) {
 			System.out.println(number);
 		}
-		
+
 		// break and continue statements
 		// break statement will terminate loop based on some condition
-		// continue statement will skip the current iteration and executes next iteration
+		// continue statement will skip the current iteration and executes next
+		// iteration
 		int l = -1;
-		while(l < 10) {
+		while (l < 10) {
 			l++;
-			if(l == 5) {
+			if (l == 5) {
 //				break;
 				continue;
 			}
 			System.out.println(l);
 		}
-		
-		
+
+		// verify given number is a prime number or not
+		System.out.println("enter some number");
+		int num = sc.nextInt();
+		boolean status = true;
+		for (int n = 2; n <= num / 2; n++) {
+			if (num % n == 0) {
+				System.out.println("number is divisible by " + n);
+				status = false;
+				break;
+			}
+		}
+		if (status) {
+			System.out.println("given number is prime number");
+		} else {
+			System.out.println("given number is not prime");
+		}
+
+		// print prime numbers with in given range
+//		for (int r = 10; r < 100; r++) {
+//			boolean flag = true;
+//			for (int n = 2; n <= r / 2; n++) {
+//				if (r % n == 0) {
+//					flag = false;
+//					break;
+//				}
+//			}
+//			if (flag) {
+//				System.out.print(r+"\t");
+//			} 
+//		}
+
+		// read prime numbers from the console until we enter a non prime number
+		boolean flag;
+		do {
+			System.out.println("enter a number");
+			int number = sc.nextInt();
+			flag = false;
+			for(int n = 2; n <= number/2; n++) {
+				if(number % n == 0) {
+					flag = true;
+					break; // for loop
+				}
+			}
+			if(!flag) {
+				System.out.println("number is "+number);
+//				break; // do while loop
+			}
+		}while(!flag);
+
 	}
 
 }
