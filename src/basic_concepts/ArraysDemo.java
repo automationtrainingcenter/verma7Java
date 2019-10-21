@@ -61,15 +61,16 @@ public class ArraysDemo {
 //		numbers[6] = 16;
 
 		// retrieving data from the array
-		System.out.println(numbers[0]);
-		System.out.println(numbers[1]);
-		System.out.println(numbers[2]);
-		System.out.println(numbers[3]);
-		System.out.println(numbers[4]);
-		System.out.println(numbers[5]);
-		
-		for(int number : numbers) {
-			
+//		System.out.println(numbers[0]);
+//		System.out.println(numbers[1]);
+//		System.out.println(numbers[2]);
+//		System.out.println(numbers[3]);
+//		System.out.println(numbers[4]);
+//		System.out.println(numbers[5]);
+
+		System.out.println("*********For each loop to retrieve the data******");
+		for (int number : numbers) {
+			System.out.println(number);
 		}
 
 		System.out.println("number of items in numbers array is " + numbers.length);
@@ -81,11 +82,15 @@ public class ArraysDemo {
 		System.out.println("number of vowels = " + vowels.length);
 
 		// retrieve the data from an initialized array
-		System.out.println(vowels[0]);
-		System.out.println(vowels[1]);
-		System.out.println(vowels[2]);
-		System.out.println(vowels[3]);
-		System.out.println(vowels[4]);
+//		System.out.println(vowels[0]);
+//		System.out.println(vowels[1]);
+//		System.out.println(vowels[2]);
+//		System.out.println(vowels[3]);
+//		System.out.println(vowels[4]);
+		System.out.println("*********************************");
+		for (int i = 0; i < vowels.length; i++) {
+			System.out.println(vowels[i]);
+		}
 
 		// 2D arrays
 		// declaration
@@ -125,7 +130,15 @@ public class ArraysDemo {
 		System.out.print(matrix2[2][1] + "\t");
 		System.out.print(matrix2[2][2] + "\n");
 
-		// 2D array is nothing but an array of multiple 1D arrays and every 1D array in 
+		System.out.println("for loop to retrieve data from the 2D array");
+		for (int r = 0; r < matrix2.length; r++) {
+			for (int c = 0; c < matrix2[r].length; c++) {
+				System.out.print(matrix2[r][c] + " ");
+			}
+			System.out.println();
+		}
+
+		// 2D array is nothing but an array of multiple 1D arrays and every 1D array in
 		// 2D array represents 1 row and these can have unequal number of columns also
 		// unequal number of columns in 2D array
 		int[][] m3 = { { 1, 2 }, { 3, 4, 5, 6 }, { 7, 8, 9 } };
@@ -141,20 +154,33 @@ public class ArraysDemo {
 
 		// find the number of columns in third row of m3
 		System.out.println("number of columns in 3rd row of m3 is " + m3[2].length);
-		
-		// retrieving the data
-		System.out.print(m3[0][0] + "\t");
-		System.out.print(m3[0][1] + "\n");
-		// **********************************
-		System.out.print(m3[1][0] + "\t");
-		System.out.print(m3[1][1] + "\t");
-		System.out.print(m3[1][2] + "\t");
-		System.out.print(m3[1][3] + "\n");
-		// ***********************************
-		System.out.print(m3[2][0] + "\t");
-		System.out.print(m3[2][1] + "\t");
-		System.out.print(m3[2][2] + "\n");
 
+		// retrieving the data
+//		System.out.print(m3[0][0] + "\t");
+//		System.out.print(m3[0][1] + "\n");
+//		// **********************************
+//		System.out.print(m3[1][0] + "\t");
+//		System.out.print(m3[1][1] + "\t");
+//		System.out.print(m3[1][2] + "\t");
+//		System.out.print(m3[1][3] + "\n");
+//		// ***********************************
+//		System.out.print(m3[2][0] + "\t");
+//		System.out.print(m3[2][1] + "\t");
+//		System.out.print(m3[2][2] + "\n");
+//		for (int r = 0; r < m3.length; r++) {
+//			for (int c = 0; c < m3[r].length; c++) {
+//				System.out.print(m3[r][c] + " ");
+//			}
+//			System.out.println();
+//		}
+		
+		for(int[] row : m3) {
+			for(int column : row) {
+				System.out.print(column+"  ");
+			}
+			System.out.println();
+		}
+		
 	}
 
 }
