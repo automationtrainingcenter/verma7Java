@@ -16,50 +16,69 @@ package methods_and_constructors;
  *  
  * Java provides "this" keyword. "this" keyword always represents the current class instance.
  * which will differentiate instance variables with local variables.
+ * this keyword we can use with in constructors and instance methods of the class 
+ * to access instance variables. we can't use this keyword in static methods.
  * We can use "this" keyword to call the constructor inside another constructor,
  * calling a constructor inside another constructor is the first line of code. This concept known as
  * constructor chaining 
  * 
  */
 
+import java.util.List;
+import java.util.Scanner;
+
 public class ConstructorsDemo {
-	
-	int i;
-	String s;
-	float f;
-	boolean b;
-	
+
+	int id;
+	String name;
+	float savings;
+	boolean gender;
+	long aadhar;
+	String pan;
+
 	// default constructor
 	public ConstructorsDemo() {
-		i =100;
-		s = "sunshine";
-		f = 9.8f;
-		b = true;
+		this.id = 100;
+		this.name = "sunshine";
+		this.savings = 9.8f;
+		this.gender = true;
+		this.aadhar = 0000000000000000l;
+		this.pan = "xxxxx0000x";
 	}
-	
+
+	private ConstructorsDemo(int id, String name, float savings, boolean gender) {
+		this.id = id;
+		this.name = name;
+		this.savings = savings;
+		this.gender = gender;
+	}
+
 	// parameterized constructor
-	public ConstructorsDemo(int id, String name, float savings, boolean gender) {
-		i = id;
-		s = name;
-		f = savings;
-		b = gender;
+	public ConstructorsDemo(int id, String name, float savings, boolean gender, long aadhar) {
+		this(id, name, savings, gender);
+		this.aadhar = aadhar;
 	}
-	
-	
+
+	// parameterized constructor
+	public ConstructorsDemo(int id, String name, float savings, boolean gender, String pan) {
+		this(id, name, savings, gender);
+		this.pan = pan;
+	}
+
 	public void display() {
-		System.out.println("i = "+i+"\ts = "+s+"\tf = "+f+"\tb = "+b);
+		System.out.println("id = " + this.id + "\tname = " + this.name + "\tsavings = " + this.savings + "\tpan = "
+				+ this.pan + "\taadhar = " + this.aadhar);
 	}
-	
+
 	public static void main(String[] args) {
 		ConstructorsDemo obj = new ConstructorsDemo();
 		obj.display();
 
-		ConstructorsDemo obj1 = new ConstructorsDemo(123, "siva", 12000.00f, true);
+		ConstructorsDemo obj1 = new ConstructorsDemo(123, "siva", 12000.00f, true, "avapp1234g");
 		obj1.display();
-		
-		ConstructorsDemo obj2 = new ConstructorsDemo(126, "sruthi", 9000.00f, false);
+
+		ConstructorsDemo obj2 = new ConstructorsDemo(126, "sruthi", 9000.00f, false, 9876123400112389l);
 		obj2.display();
 	}
-	
 
 }
