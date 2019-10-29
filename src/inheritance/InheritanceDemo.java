@@ -54,6 +54,20 @@ public class InheritanceDemo {
 		c2Obj.methodOne(); // Parent
 		
 		
+		// Parameterized constructor in parent class
+		ParameterChild pcObj = new ParameterChild(101, "surya", 50000);
+		System.out.println(pcObj);
+		
+		// Object creation to the child class and object reference to the parent class
+		Parent prObj = new ChildOne();
+		prObj.methodOne();
+		
+		// to call child class methods we have to type cast parent class object reference to child class object reference
+//		ChildOne crObj = (ChildOne) prObj;
+//		crObj.methodTwo();
+		
+		((ChildOne)prObj).methodTwo();
+		
 	}
 
 }

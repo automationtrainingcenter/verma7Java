@@ -1,4 +1,7 @@
 package encapsulation;
+
+import java.util.Scanner;
+
 /*
  * encapsulation means hiding data (properties) from the outside world.
  * Encapsulation means binding data and operations on the data together
@@ -10,7 +13,6 @@ package encapsulation;
  * 
  */
 
-import java.util.Scanner;
 
 public class EncapsulationDemo {
 	private int id;
