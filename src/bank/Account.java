@@ -1,6 +1,6 @@
 package bank;
 
-public class Account {
+public class Account implements IAccount {
 
 	// private properties
 	private String accNum;
@@ -10,7 +10,7 @@ public class Account {
 	private long aadhar;
 	private String panNum;
 
-	// private constructor 
+	// private constructor
 	private Account(String accNum, String name, double balance, long phoneNum) {
 		this.accNum = accNum;
 		this.name = name;
@@ -18,7 +18,6 @@ public class Account {
 		this.phoneNum = phoneNum;
 	}
 
-	
 	// overloaded constructor
 	public Account(String accNum, String name, double balance, long phoneNum, long aadhar) {
 		this(accNum, name, balance, phoneNum); // constructor chaining

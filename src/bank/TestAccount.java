@@ -8,7 +8,7 @@ public class TestAccount {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("enter your account type");
 		String accType = sc.next().toLowerCase();
-		Account acc = null;
+		IAccount acc = null;
 		switch (accType) {
 		case "savings":
 			acc = new Savings("12398700661", "surya", 20000, 9876543001l, "avapp8765f");

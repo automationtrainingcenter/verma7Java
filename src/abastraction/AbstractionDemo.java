@@ -28,6 +28,7 @@ package abastraction;
  * we can't override static method of interface
  * we can't create an instance of either abstract class or interface but we can create object reference,
  * 
+ * 
  * Type of interfaces
  * Marker or tagged interface
  * 	it is an interface without any abstract methods like Serializable, Clonable .etc
@@ -47,6 +48,23 @@ public class AbstractionDemo {
 		obj.methodOne();
 		obj.methodTwo();
 		obj.methodThree();
+		
+		
+		// interface demo
+		MyInterface iobj = new MyInterfaceImpl();
+		iobj.methodOne();
+		iobj.methodTwo();
+		iobj.methodThree();
+		
+		// single class implementing multiple interfaces
+		InterfaceOne i1Obj = new ClassImplTwoInterfaces();
+		i1Obj.methodOne();
+		i1Obj.commonMethod();
+		
+		
+		InterfaceTwo i2Obj = new ClassImplTwoInterfaces();
+		i2Obj.methodTwo();
+		i2Obj.commonMethod();
 	}
 
 }
