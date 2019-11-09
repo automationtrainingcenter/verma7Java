@@ -1,4 +1,7 @@
 package abastraction;
+
+import abastraction.Outer.Inner;
+
 /*
  * Abstraction means a plan or template to create a class
  * Abstraction means hiding the implementation details of methods
@@ -23,9 +26,11 @@ package abastraction;
  * 
  * From Java 8 onwards interface allows concrete methods
  * These concrete methods are either static methods or "default" methods
- * We can access default method using interface reference and static method using interface name
+ * We can access default method using interface reference and static method using interface name only
  * we can override a default method of interface in implementation classes but
  * we can't override static method of interface
+ * 
+ * 
  * we can't create an instance of either abstract class or interface but we can create object reference,
  * 
  * 
@@ -48,23 +53,49 @@ public class AbstractionDemo {
 		obj.methodOne();
 		obj.methodTwo();
 		obj.methodThree();
-		
-		
+
 		// interface demo
 		MyInterface iobj = new MyInterfaceImpl();
 		iobj.methodOne();
 		iobj.methodTwo();
 		iobj.methodThree();
-		
+
 		// single class implementing multiple interfaces
 		InterfaceOne i1Obj = new ClassImplTwoInterfaces();
 		i1Obj.methodOne();
 		i1Obj.commonMethod();
-		
-		
-		InterfaceTwo i2Obj = new ClassImplTwoInterfaces();
+
+//		InterfaceTwo i2Obj = new ClassImplTwoInterfaces();
+//		i2Obj.methodTwo();
+//		i2Obj.commonMethod();
+
+		// type cast InterfaceOne object reference to Imple class object reference
+//		ClassImplTwoInterfaces cObj = (ClassImplTwoInterfaces) i1Obj;
+//		cObj.methodTwo();
+
+		InterfaceTwo i2Obj = (InterfaceTwo) i1Obj;
 		i2Obj.methodTwo();
-		i2Obj.commonMethod();
+
+		// inner interfaces
+		Outer outObj = new InnerIterfacesImpl();
+		outObj.methodOne();
+
+		// call inner interface methods by type casting outer interface object reference
+		// to inner interface
+//		Inner inObj = (Inner) outObj;
+//		inObj.methodTwo();
+
+		// calling inner interface methods using outer interface method whose return
+		// type is Inner
+//		Inner inObj = outObj.method();
+//		inObj.methodTwo();
+		outObj.method().methodTwo();
+
+		// Java 8 interface
+		Java8Interfce j8Obj = new Java8InterfaceImpl();
+		j8Obj.methodOne();
+		j8Obj.defaultMethod();
+		Java8Interfce.staticMethod();
 	}
 
 }
