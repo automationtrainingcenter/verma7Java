@@ -35,7 +35,7 @@ import abastraction.Outer.Inner;
  * 
  * 
  * Type of interfaces
- * Marker or tagged interface
+ * 
  * 	it is an interface without any abstract methods like Serializable, Clonable .etc
  * 	Generally these interfaces provides special instructions to the JVM
  * 	we can have common parent to the multiple classes or interfaces
@@ -96,6 +96,26 @@ public class AbstractionDemo {
 		j8Obj.methodOne();
 		j8Obj.defaultMethod();
 		Java8Interfce.staticMethod();
+
+		// functional interface using normal java class
+		FnInterfaceOne fnor = new FnInterfaceImpl();
+		fnor.methodOne();
+		
+		// functional interface using anonymous class
+		FnInterfaceOne fanon = new FnInterfaceOne() {
+			
+			@Override
+			public void methodOne() {
+				System.out.println("method one definition using anonymous class");
+			}
+		};
+		fanon.methodOne();
+		
+		
+		// functional interface using lambda expression
+		FnInterfaceOne flam = () -> System.out.println("method one definition using lambda expression");
+	
+		flam.methodOne();
 	}
 
 }
