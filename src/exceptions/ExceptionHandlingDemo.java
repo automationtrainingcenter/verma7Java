@@ -19,8 +19,13 @@ package exceptions;
  * 
  * throws keyword will throw the exception to the corresponding method declaration
  *
+ *
+ * All the compile time exceptions are child classes of Exception class and all the
+ * run time exceptions are child classes of RunTimeException class
  */
 
 public class ExceptionHandlingDemo {
+	
+	
 
 }
