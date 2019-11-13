@@ -26,6 +26,24 @@ package exceptions;
 
 public class ExceptionHandlingDemo {
 	
+	public static void openBrowser(String browserName)   {
+		if(browserName.equalsIgnoreCase("chrome")) {
+			System.out.println("chorme browser opened");
+		}else if(browserName.equalsIgnoreCase("firefox")) {
+			System.out.println("firefox browser opened");
+		}else {
+			throw new InvalidBrowserException();
+		}
+	}
+	
+	public static void main(String[] args)  {
+		try {
+			openBrowser("firefoxhg");
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+	
 	
 
 }
