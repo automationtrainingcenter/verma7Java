@@ -10,14 +10,16 @@ package collections;
  */
 
 import java.util.Collection;
-import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
+import java.util.TreeMap;
 
 public class MapDemo {
 	public static void main(String[] args) {
 		// create a map
-		Map<String, Integer> courses = new HashMap<>();
+		Map<String, Integer> courses = new TreeMap<>();
 
 		// find the number of values in a Map
 		System.out.println(courses.size());
@@ -28,12 +30,12 @@ public class MapDemo {
 		// add the data to the map
 		courses.put("c", 30);
 		courses.put("cpp", 45);
-		courses.put("java", 45);
+		courses.put("Java", 45);
 		courses.put("python", 60);
 		courses.put("selenium", 80);
 		courses.put("testing", 100);
-		courses.put("cpp", 40);
-		courses.put("flask", 30);
+//		courses.put("cpp", 40);
+		courses.put("Flask", 30);
 
 		// to print the map on the console
 		System.out.println(courses);
@@ -53,6 +55,36 @@ public class MapDemo {
 			System.out.println(value);
 		}
 		
+		System.out.println("********************************");
+		// retrieve both key and values pairs from the map
+		Set<Entry<String, Integer>> pairs = courses.entrySet();
+		Iterator<Entry<String, Integer>> it = pairs.iterator();
+		while(it.hasNext()) {
+			Entry<String, Integer> next = it.next();
+			System.out.println(next.getKey());
+			System.out.println(next.getValue());
 		
-	}
+		}
+		// to update the data of a key we can use put() with key you want to update and new value
+		courses.put("cpp", 40);
+		System.out.println(courses);
+		
+		// to delete the key from a map we have to remove()
+		Integer value = courses.remove("cpp");
+		System.out.println(value);
+		System.out.println(courses);
+		
+		
+		System.out.println(courses.remove("java", 45));
+		System.out.println(courses);
+		
+		// to search a data in the map
+		System.out.println(courses.containsKey("c"));
+		
+		System.out.println(courses.containsValue(80));
+		
+		// to remove all the data from the map
+		courses.clear();
+		System.out.println(courses);
+	}	
 }
